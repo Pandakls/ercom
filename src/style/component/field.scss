@@ -1,0 +1,46 @@
+@import '../common/variables.scss';
+
+.display-field{
+    display: flex;
+    width: 100%;
+    position: relative;
+    padding: 10px 0;
+
+    .label{
+        width: 60%;
+        text-align: right;
+        margin-right: 10px;
+        color: $grey;
+    }
+
+    .value{
+        width: 30%;
+        color: $blue;
+    }
+}
+
+.input-field{
+    display: flex;
+    width: 100%;
+    position: relative;
+    height: 40px;
+    align-items: center;
+
+    .label{
+        width: 30%;
+        text-align: right;
+        margin-right: 10px;
+        color: $grey;
+    }
+
+    .input{
+        width: calc(70% - 10px);
+        max-width: calc(70% - 10px);
+    }
+}
+
+.date-picker{
+    position: absolute;
+    background: white;
+    z-index: 1;
+}

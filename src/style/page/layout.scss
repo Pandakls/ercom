@@ -1,0 +1,62 @@
+@import '../common/variables.scss';
+
+.content{
+    background: $lightgrey;
+    height: 100vh;
+    width: 100vw;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+section{
+    width: 100vw;
+    max-width: 1200px;
+    margin: 0 0 20px 0;
+}
+
+.rows{
+    position: relative;
+    .column{
+        display:inline-block;
+        width: 50%;
+    }
+}
+
+.filters{
+    display: inline-block;
+    width:45%;
+    height: $filter-height;
+    position: relative;
+    &::before{
+        content: "";
+        height: 40px;
+        width: 40px;
+        background: white;
+        border: 2px solid #e9e9E9;
+        border-top: none;
+        border-left: none;
+        position: absolute;
+        transform: rotate(-45deg);
+        right: -23px;
+        top: 90px;
+    }
+}
+
+.data-analysis{
+    display: inline-block;
+    width:55%;
+    height: $filter-height;
+}
+
+.dates{
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-end{
+    text-align: right;
+    .date-picker{
+        right: 16px;
+    }
+}
