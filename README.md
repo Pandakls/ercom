@@ -1,8 +1,16 @@
 # ercom
 
-Compile sources : 
-npm i
-npm run start
+#### To launch project :
 
-Launch project :
 open index.html
+
+
+#### To install the dev environnement : (Node and npm needed)
+
+`npm i`
+
+
+#### To compile sources (after editing code): 
+
+`npm run start`
+
