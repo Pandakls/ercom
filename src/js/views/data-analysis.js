@@ -26,16 +26,18 @@ class DataAnalysis extends React.Component {
 	}
 
 	render(){
-		const {max, min, average, overThresh, underThresh, valueThresh} = this.state;
+		const {max, min, average, overThresh, underThresh, valueThresh,dateMax, dateMin} = this.state;
 		return (
 			<Widget title="Data analysis">
 				<div className='rows'>
 					<div className='column'>
 						<Field label="Maximum" value={max}/>
-						<Field label="Average" value={average}/>
+						<Field label="Reached at" value={dateMax.format('DD/MM/YYYY hh:mm')}/>
 						<Field label="Minimum" value={min}/>
+						<Field label="Reached at" value={dateMin.format('DD/MM/YYYY hh:mm')}/>
 					</div>
 					<div className='column'>
+						<Field label="Average" value={average}/>
 						<Field label="% over threshold" value={overThresh}/>
 						<Field label="Value at threshold" value={valueThresh}/>
 						<Field label="% under threshold" value={underThresh}/>

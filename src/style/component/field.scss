@@ -7,14 +7,14 @@
     padding: 10px 0;
 
     .label{
-        width: 60%;
+        width: 50%;
         text-align: right;
         margin-right: 10px;
         color: $grey;
     }
 
     .value{
-        width: 30%;
+        width: calc(50% - 10px);
         color: $blue;
     }
 }

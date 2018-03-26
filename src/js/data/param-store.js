@@ -10,7 +10,9 @@ const initialValues = {
     average: 0,
     overThresh: 0,
     underThresh: 0,
-    valueThresh: 0
+    valueThresh: 0,
+    dateMax: moment(),
+    dateMin: moment()
 }
 
 let callbackFunction = [];
@@ -70,9 +72,12 @@ function computeNewValues(){
         Object.assign(values, initialValues);
         return;
     }
-
-    values.max = _.maxBy(dataList, attr)[attr];
-    values.min = _.minBy(dataList, attr)[attr];
+    const max = _.maxBy(dataList, attr)
+    values.max = max[attr];
+    values.dateMax = moment(max.time, 'DD-MM hh:mm:ss');
+    const min = _.minBy(dataList, attr)
+    values.min = min[attr];
+    values.dateMin = moment(min.time, 'DD-MM hh:mm:ss');
     values.average = Math.round(_.meanBy(dataList, attr)*100)/100;
     values.valueThresh = ((values.max - values.min) * params.threshold ) / 100 + values.min;
     let countOver = 0;
